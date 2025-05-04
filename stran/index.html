@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucija Rotar Portfolio</title>
+    <link rel="stylesheet" href="1.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Emblema+One&family=Hammersmith+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200..800;1,200..800&family=Lilita+One&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rowdies:wght@300;400;700&display=swap');
+    </style>
+</head>
+<body> <!-- NAVIGACIJA! --> 
+    <a href="slikce/star.gif" id="zvezdice"> <img src="slikce/stars2.png" alt="zvezdicee"></a>
+    <a href="slikce/www.png" id="oblacki"> <img src="slikce/www1.png" alt="oblackii"></a>
+    <nav class="navigacija"> 
+        <div class="navigacija_container">
+            <a href="slikce/aaaa.gif" id="navigacija_slika"> <img src="slikce/aaaa.gif" alt="Logo"></a>
+            <div class="navigacija_anim" id="meni"> <!-- celoten column --> 
+                <div class="crtice">
+                <span class="nav" ></span>   <!-- del columna ; tko dobimo "hamburger bars" --> 
+                <span class="nav" ></span>
+                <span class="nav" ></span>
+                 </div> 
+             </div> 
+        </div>
+        <ul class="navigacija__meni">
+            <li class="navigacija__stvari">
+                <a href="/" class="navigacija__link">Portfolio<img class="efekt" src="slikce/anim.gif"> <!-- transparentni png in animacija, ko hoveramo -->  </a> <!-- nazaj na og stran --> 
+            </li>
+            <li class="navigacija__stvari">
+                <a href="/ilustracije.html" class="navigacija__link">Works<img class="efekt" src="slikce/anim.gif"> </a> <!-- druga stran --> 
+                
+            </li>
+            <li class="navigacija__stvari">
+                <a href="/" class="navigacija__link">About<img class="efekt" src="slikce/anim.gif"> </a> <!-- druga stran --> 
+            </li>
+            <li class="navigacija__btn">
+                <a href="mailto:lucija.rotar@gmail.com" class="gumb">Contact<img class="efekt" src="slikce/anim.gif"> </a> <!-- kontakt --> 
+            </li>
+        </div>
+        
+        <audio class="player" loop src="/slikce/프로미스나인 (fromis9) 'WE GO' MV.mp3"> </audio> 
+        
+        <button class="audio_btn"> 
+            <span class="sparkle">    
+        </span> <!-- span zato, da ne interferira z layoutom -->  
+        </button> 
+        </ul>
+    </nav>
+
+    <!-- HERO DEL --> 
+     <div class="glavno">
+        <div class="glavno_slike-container">
+            <img src="slikce/splash artt.png" alt="splash art" id="glavna_slika">
+        </div>
+        <div class="lotusi"> <img src="slikce/splash artt lotuses2.png" alt="lotusii" id="lotusi"> </div>
+
+        <div class="anim_container_prvi">  <img src="slikce/clouds.png" id="anim_containerr"> </div> <div class="anim_container_drugi"> <img id="profile_anim" src="slikce/profile animation.png"> </div>
+        <div class="glavno_container">
+            <div class="glavno_stvari">
+                <div class="krog"> </div>
+             <h1>PORTFOLIO <img src="slikce/decoration.png" id="dekoracija"> </h1>
+                <div class="container_h3"> <h3>I am a first year student at the Faculty of Natural Sciences and Engineering in Ljubljana. <br> My specialties are illustration and 3d modelling.</h3> </div>
+                <button class="glavno_btn"> <a href="/">VIEW RESUME</a></button>
+            </div>
+            </div>
+        </div>
+
+    <script src="1.js" defer></script>
+    <div class="anim_container"> <img src="slikce/clouds.png" id="anim_containerr1"> </div>
+</body>
+</html>
+
+
+    <!-- SLIKE DEL --> 
+  <div class="ozadje">
+    <div class="locen-tab_dela"> <!-- tab samo za sliko --> 
+        <span class="zapreti_tab"> <button class="ven_iz_slike"> <a href="1.html">Exit</a></button> </span> <!-- gumb za zapreti tab -->  <!-- span, ker je bolj za tekst --> 
+        <div class="tab-stvari">
+            <span class="prejsnja"> <img class="levi_gumb" src="slikce/arrowleft.png"> </span> <!-- prejsnja slika --> 
+            <img class="izbrana_slika" src="" alt=""> <!-- slika, na katero smo kliknili/prestavili --> 
+            <span class="naslednja"> <img class="desni_gumb" src="slikce/arrowright.png"> </span> <!-- naslednja slika --> 
+        </div>
+    </div>
+</div> 
+
+    <!-- možne slike --> 
+    <img id="chars1" src="slikce/chars1.png">
+
+    <div id="dela_opacity" class="dela">
+        <img id="prva_slika" src="slikce/prvi.jpg" alt="prvii">
+        <img id="druga_slika" src="slikce/drugi.jpg" alt="drugii">
+        <img id="tretja_slika" src="slikce/tretji.jpg" alt="tretjii">
+        <img id="četrta_slika" src="slikce/cetrti.jpg" alt="četrtii">
+    </div>
+    <div class="anim_container"> <img src="slikce/clouds.png" id="anim_containerr2"> </div>
+    <!-- Final splashart --> 
+    <div id="koncni_splashart"><img id="k_splashart" src="slikce/koncni splashart1.png" alt="koncni"></div>
+
+    <!-- Footer section --> 
+     <div class="footer_container">
+        <div class="footer_povezave">
+            <div class="footer_wrapper">
+                <div class="footer_stvari1">
+                    <h2>More</h2>
+                    <a href="/">Information</a>
+                    <a href="mailto:lucija.rotar@gmail.com">Contact</a>
+                    <a href="/">Personal projects</a>
+                </div>
+                <div class="footer_stvari2">
+                    <h2>Where you can find me</h2> <a href="https://www.instagram.com/broccoiini/">Instagram</a>
+                    <a href="https://www.artstation.com/lucijar">Artstation</a>
+            </div>
+        </div>
+     </div>
+     <img src="slikce/sun.png" id="dekoracija_zvezde1"> <img src="slikce/moon.png" id="dekoracija_zvezde2">
+
+     <div class="footer_slike"> 
+        <div class="locen_icon"><img id="information" src="slikce/tekst ikona.png"></div>
+        <div class="skupni_ikoni"><img id="insta" src="slikce/insta.png" alt="instaaaa">
+        <img id="arstation" src="slikce/artstation.png" alt="artstatioon"> </div>
+    </div>
