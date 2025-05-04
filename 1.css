@@ -1,0 +1,1144 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Hammersmith One', sans-serif; 
+}
+
+.banner{
+    position: relative;
+}
+
+#zvezdice{
+    opacity: 100%;
+    position: fixed; /*da sta na začetku bannerja*/
+    top: 0;
+    z-index: 100000;
+    pointer-events: none;
+}
+
+#oblacki {
+    opacity: 100%;
+    width: 100%;
+    height: 100%;
+    position: fixed; /*da sta na začetku bannerja*/
+    top: 0;
+    z-index: 99999;
+    pointer-events: none;
+    margin-top: -385px;
+}
+
+#zvezdice img{
+    height: 50%;
+    width: 50%;
+}
+
+#oblacki img{ /*img, ker drugace object-fit ne dela*/
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+}
+
+.navigacija {
+    position: absolute;
+    padding: 0;
+    width: 100%;
+    height: 40%;
+    box-sizing: border-box;
+     display: flex; /* child1,child2,child3 consecutively na levo */
+     justify-content: center; /* 1,2,3f boxes na sredini */
+     align-items: center;
+     font-size: 1.2rem;
+     position: sticky; 
+     top: 0;
+     z-index: 10000; /* ni prekrivanja */
+     background-image: 
+     linear-gradient(to bottom, rgba(0, 0, 0, 0) 80%, rgb(57, 34, 46) 100%),
+     url('slikce/ww.png');
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+}
+
+.navigacija__container{
+    position: relative;
+    display: flex; /* premakne v desno */
+    justify-content: space-between;
+    height: 5rem;
+    z-index: 1;
+    width: 100%;
+    max-width: 81rem;
+    margin: 0 auto; /* gor, dol ; levo, desno */
+    padding: 10px 20px;
+}
+
+#navigacija_slika img {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    cursor: pointer;
+    padding-top: 5%;
+}
+
+.navigacija__meni {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.navigacija__stvari {
+    height: 80px;
+    list-style: none; /* brez teh ugly ass pik za unordered list*/
+}
+
+.navigacija__link {
+    color:rgb(255, 87, 149);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(72, 37, 107);
+    background-image: linear-gradient(to top, rgb(59, 36, 134) 0%, rgb(232, 190, 255) 100%);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 0 2rem;
+    height: 100%;
+    text-decoration: none; /* ni podčrtano */
+    font-size: 1.5rem;
+    opacity: 100%;
+    font-size: 100%;
+    position: relative; /* da lahko gif postavimo nad gumbe */
+}
+
+.navigacija__link:hover {
+    background-image: linear-gradient(to top,rgb(255, 242, 245) 0%, rgb(249, 60, 255) 100%);
+    opacity: 80%;
+    font-size: 110%;
+    transition: all 0.3s ease;
+}
+
+.efekt {
+    opacity: 0%;
+    display: block;
+    position: absolute;
+    top: 0; /* nad gumbom*/
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none; /* da ni tega hover efekta miške*/
+}
+
+.navigacija__link:hover .efekt{
+    opacity: 100%;
+}
+
+.navigacija__btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+    width: 100%;
+    font-size: 100%;
+}
+
+.gumb{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    height: 100%;
+    width: 100%;
+    outline: none;
+    background: rgb(182, 132, 182);
+    color:rgb(255, 218, 218);
+    font-size: 100%;
+    border-radius: 4px;
+}
+
+.gumb:hover {
+    background: rgb(255, 218, 218);
+    color: rgb(182, 132, 182);
+    font-size: 110%;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 960px) {
+    #oblacki {
+        opacity: 0%;
+    }
+
+    #zvezdice {
+        opacity: 0%;
+}
+
+    .navigacija__container {
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        z-index: 1;
+        width: 100%;
+        max-width: 1300px;
+        padding:0;
+    }
+
+    .navigacija__meni {
+        position: center;
+        display: grid;
+        grid-template-columns: auto; /* ločevanje*/
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        top: -1000px; /* da se ne vidi, razen, ko kliknemo */
+        opacity: 0%;
+        transition: all 1s ease;
+        height: 50vh; /*višina menija*/
+        z-index:-1;
+        border: none;
+    }
+
+    .navigacija__meni.active {
+        top: 100%;
+        width: 100%;
+        opacity: 100%;
+        position: block;
+        background:rgb(72, 37, 107);
+        transition: all 1s ease;
+        z-index: 99;
+        height: 50vh;
+        font-size: 1.6rem;
+    }
+
+    .nav { /*te crtice*/
+        opacity: 100%;
+        display: block;
+        cursor: pointer;
+        border-radius: 6px;
+        width: 25px;
+        height: 3px;
+        margin: 6px auto;
+        transition: all 0.3s ease-in-out;
+        background:rgb(255, 218, 218);
+    }
+
+    .navigacija__stvari {
+        width: 100%;
+        position: relative;
+    }
+
+    .efekt {
+        position: absolute;
+    }
+
+    .navigacija__link {
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: table;
+        transition: all 0.3s ease;
+        background-color: rgb(72, 37, 107);
+        color: white;
+    }
+
+    #meni{
+        position: absolute;
+        top: 20%;
+        right:0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 30px;
+        z-index: 1000;
+        transform: translate(5%, 20%);
+    }
+
+    .navigacija__btn {
+       padding-bottom: 2rem;
+    }
+
+    .gumb{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: 80px;
+        margin: 0;
+        border-radius: 6px;
+    }
+
+    #meni.is-active .nav:nth-child(2) { /*srednja črtica skrita*/
+        opacity: 0%;
+    }
+
+    #meni.is-active .nav:nth-child(1) {
+        transform: translateY(8px) rotate(45deg); /*1. črtica rotira*/
+    }
+
+    #meni.is-active .nav:nth-child(3) {
+        transform: translateY(-10px) rotate(-45deg); /*3. črtica rotira*/
+    }
+
+    #dekoracija{
+        opacity: 100%;
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding-right:20px;
+        left: 1;
+        width: 110%;
+        height: 110%;
+        object-fit: contain;
+        }
+
+}
+
+/* Hero Section*/
+#glavna_slika {
+    width: 100%;
+    height: 100%; 
+}
+
+#glavna_slika img {
+    object-fit: cover; 
+}
+
+#lotusi{
+    width: 100%;
+    height: 280%;
+    margin-top: -170px;
+}
+
+
+.glavno{
+    background-color:rgb(72, 37, 107);
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden; /* proti sideways scroll */
+    padding-bottom: 100px;
+    z-index: -10000px;
+}
+
+.glavno_container{
+    display: flex;
+    justify-content: center; /*children v levo postavljeni*/
+    justify-content: space-between; /*prostor med elementi*/
+    flex-wrap: wrap; /*children wrappajo pod vrstico, če je screen premajhen*/
+    align-items: center;
+    margin: 0 auto;
+    min-height: 90vh;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 20px;
+   /*background-color:rgb(76, 66, 104);*/
+    background-image: url("slikce/111.png");
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0 50px;
+}
+
+.glavno_stvari{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 20px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.glavno_stvari h1{
+    text-align: center;
+    font-size: 5rem;
+    background-color: rgb(72, 37, 107);
+    background-image: linear-gradient(to top, rgb(57, 25, 148) 0%, rgb(255, 216, 223) 100%);
+    background-size: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    word-wrap: break-word; /*proti overflowu*/
+    position: relative;
+}
+
+.krog{
+    margin-top: 25px;
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    margin-right: 20px;
+    box-shadow: 0px 0px 20px 0px;
+    background-image: url("slikce/1.jpg");
+    margin-bottom: 25px;
+    background-size: cover;
+  }
+
+.container_h3{
+    padding: 40px 80px;
+}
+
+.glavno_stvari h3{
+    font-family: "Inter", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+    color: rgb(238, 222, 255);
+    word-wrap: break-word;
+}
+
+.glavno_btn {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    align-self: center;
+    align-items: center;
+    border-style: solid;
+    border-width: 3px;
+    background-color: transparent;
+    padding: 10px 32px;
+    border-radius: 25px;
+    cursor: pointer;
+    position: relative; /*z-index drugac ne dela*/
+    transition: all 0.35s ease-in-out;
+    text-decoration: none;
+    border-color: rgb(255, 218, 218);
+    margin: 0;
+}
+
+.glavno_btn a {
+    white-space: nowrap; /*d tekst ni v vecih vrsticah!!*/
+    color: rgb(255, 218, 218);
+    padding: 5% 32px;
+    font-size: 1rem;
+    border-radius: 25px;
+    background-color: transparent;
+    font-family: 'Lilita One', sans-serif;
+    position: relative;
+    z-index: 2;
+}
+
+.glavno_btn:after {
+    position: relative;
+    content: ''; /*da tekst izgine, če ne bi se samo tekst obarval*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(61, 53, 82);
+    background-repeat: no-repeat;
+    border-radius: 25px;
+    z-index: 1000 !important;
+    transition: all 0.2s ease-out;
+    transform: scale(0);
+    cursor: pointer;
+}
+
+.glavno_btn:hover {
+    transform: scale(1.05); /* poveča gumb ob hoveranju*/
+}
+
+.glavno_btn:hover:after {
+    transform: scale(1); /* background poveča po hoveranju */
+}
+
+.glavno_btn:hover a {
+    color: rgb(209, 180, 255); /* sprememba barve teksta ob hoveranju*/
+    transition: all 0.3s ease;
+}
+
+.glavno_btn:hover{
+    border-color: rgb(209, 180, 255); /* sprememba barve borderja ob hoveranju*/
+    transition: all 0.3s ease;
+}
+
+
+/*mobi*/
+@media screen and (max-width: 768px) {
+    .glavno_container{
+        display: grid;
+        grid-template-columns: auto;
+        align-items: center;
+        justify-self: center;
+        width: 100%;
+        margin: none;
+        height: 90vh;
+        display: flex;
+        justify-content: center; /*children v levo postavljeni*/
+        justify-content: space-between; /*prostor med elementi*/
+        flex-wrap: wrap; /*children wrappajo pod vrstico, če je screen premajhen*/
+        align-items: center;
+        margin: 0 auto;
+        min-height: 90vh;
+        flex-direction: column;
+        padding: 40px !important;
+        border-radius: 20px;
+        background-color:rgb(123, 82, 235);
+        z-index: 1;
+        width: 100%;
+        padding: 0 30px;
+    }
+
+    .glavno_stvari h1 {
+        font-size: 3rem;
+    }
+
+    .glavno_stvari h3{
+        font-size: 15px;
+    }
+
+    .krog{
+        margin-top: 5px;
+        margin-bottom: 5px;
+        width:150px;
+        height:150px;
+    }
+
+    .dela img{
+        width:100%;
+        height:100%;
+        border-radius: 10px !important;
+    }
+
+    .izbrana_slika{
+        width:50% !important;
+        height:50% !important;
+        object-fit:scale-down !important;
+        align-self: center !important;
+        right: 25% !important;
+    }
+
+    .levi_gumb{
+        position: fixed; 
+        top: 61% !important; 
+        width: 40px !important; /*mora biti v px, ne %, ker č ne nista zares fixed*/
+        height: 40px !important; /*mora biti v px, ne %, ker č ne nista zares fixed*/
+        left: 4% !important;
+    }
+
+    .desni_gumb{
+        position: fixed; 
+        top: 61% !important; 
+        width: 40px !important; /*mora biti v px, ne %, ker č ne nista zares fixed*/
+        height: 40px !important; /*mora biti v px, ne %, ker č ne nista zares fixed*/
+        right: 55% !important;
+    }
+
+    .zapreti_tab{
+        position: fixed; 
+        top: 60.2% !important; 
+        width: 40px !important; /*mora biti v px, ne %, ker č ne nista zares fixed*/
+        height: 40px !important; /*mora biti v px, ne %, ker č ne nista zares fixed*/
+        left: 20% !important;
+    }
+
+    .footer_slike {
+        width: 200%;
+        height: 200%;
+    }
+
+    .footer_slike {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10px;
+        }
+        
+    .locen_icon, .skupni_ikoni {
+        width: 10%;
+        }
+        
+    .skupni_ikoni{
+        margin-left: 110px;
+        display: flex;
+        }
+        
+    #insta{
+        width: 25%;
+        height: 75% !important;
+        }
+        
+    #arstation{
+        width: 25%;
+        height: 70% !important;
+        }
+
+    #dekoracija_zvezde2{
+        margin-top: -40px;
+        margin-left: 350px !important;
+        opacity: 100%;
+        display: block;
+        position: absolute;
+        width: 10%;
+        height: 10%;
+        object-fit: contain; 
+        }
+
+    .glavno_container {
+            position: relative;
+            z-index: 1;
+        }
+        
+    #profile_anim {
+        position: absolute;
+        top: 670px !important;
+        left: 0;
+        z-index: 10000000;
+        width: 100%;
+        height: 20% !important;
+        }
+
+    .glavno{
+        padding-bottom: 50px !important;
+    }
+
+    .navigacija__link{
+        background-image: linear-gradient(to top, rgb(19, 4, 69) 0%, rgb(208, 156, 236) 100%);
+    }
+
+    .dela{
+        padding-top: 50px;
+        padding-bottom: 50px;
+        background-color: rgb(55, 28, 81);
+        background-image: repeating-linear-gradient(-45deg, rgb(55, 28, 81),rgb(55, 28, 81)10px, rgb(63, 36, 90),rgb(63, 36, 90) 20px) !important;
+        background-size: 900px !important; /*potrebno, da animacija dela*/
+    }
+
+    .locen-tab_dela{
+        padding-top: 50px;
+        padding-bottom: 50px;
+        background-color: rgb(55, 28, 81);
+        background-image: repeating-linear-gradient(45deg, rgb(63, 36, 90),rgb(63, 36, 90)10px, rgb(55, 28, 81), rgb(55, 28, 81) 20px) !important;
+        background-size: 900px !important;
+        animation: gradient 90s linear infinite;
+    }
+
+    .audio_btn{
+        padding-left: 85%;
+        padding-bottom: 60px;
+        margin-bottom: 15px !important;
+    }
+
+    .sparkle {
+        opacity: 0% !important;
+    }
+
+
+}
+
+/*Slike del!!!*/
+
+.locen-tab_dela {
+    display: none;
+    position: fixed;
+    z-index: 1000000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    opacity: 0%;
+    visibility: hidden;
+    background-image: repeating-linear-gradient(45deg, rgb(63, 36, 90) ,rgb(63, 36, 90) 20px, rgb(55, 28, 81) 20px,rgb(55, 28, 81) 35px);
+    background-size: 100px 100px;
+    animation: gradient 90s linear infinite;
+}
+
+@keyframes gradient{
+0% {
+    background-position: 0%;
+}
+50% {
+    background-position: 100%;
+}
+100% {
+    background-position: 0%;
+}
+}
+
+.locen-tab_dela.prikazi { /*kliknemo na sliko, JS adda nov class .prikazi*/
+    display: flex;
+    opacity: 100%;
+    visibility: visible;
+}
+
+.stran.prikazi .locen-tab_dela{ /*pokaze .locen-tab_dela*/
+    opacity: 100% !important;
+    visibility: visible !important;
+}
+
+.stran.skrij_ostalo *:not(.locen-tab_dela){ /*vse skrije, razen .locen-tab_dela*/
+    opacity: 0% !important;
+    visibility: hidden !important;
+    display: none;
+}
+
+/* ni scrollanja, ko je .locen-tab_dela prikazan*/
+.stran.skrij_ostalo {
+    overflow: hidden; /*ni mogoče scrollat*/
+}
+
+/*ko ni več taba, lahko spet scrollaš*/
+.stran.prikazi {
+    overflow: auto; /*lahko spet scrollaš*/
+}
+
+.tab-stvari{
+    position: relative;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.izbrana_slika{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: block;
+    margin: 0 auto;
+}
+
+#dela.opacity { /*mora bit id, ker c ne !important ne overrida for some reason??*/
+    opacity: 100% !important;
+}
+
+
+.dela img {
+    cursor: pointer;
+    display: block;
+    width: 70%;
+    height: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    position: relative;
+    border-radius: 40px;
+}
+
+.dela img:hover {
+    filter: brightness(70%);
+    width: 75%;
+    height: 75%;
+    transition: all 0.3s ease-in;
+}
+
+.levi_gumb, .desni_gumb{
+    position: fixed; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    width: 70px; /*mora biti v px, ne %, ker č ne nista zares fixed*/
+    height: 55px; /*mora biti v px, ne %, ker č ne nista zares fixed*/
+    cursor: pointer;
+    z-index: 2;
+}
+
+.levi_gumb:hover, .desni_gumb:hover{
+    width: 80px;
+    height: 65px;
+    transition: all 0.1s ease-in;
+
+}
+
+.desni_gumb{
+    right: 10px;
+    
+}
+
+.levi_gumb{
+    left: 10px;
+}
+
+.zapreti_tab{
+    position: fixed;
+    top: 15px;
+    right: 35px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+a:link{
+    text-decoration: none;
+}
+
+.ven_iz_slike {
+    width:100%;
+    height:80%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    align-self: center;
+    align-items: center;
+    border-style: solid;
+    border-width: 3px;
+    background-color: rgb(255, 228, 200);
+    padding: 10px 32px;
+    border-radius: 25px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.35s ease-in-out;
+    text-decoration: none;
+    margin: 0;
+    border-color: rgb(174, 123, 255);
+    font-family: 'Lilita One', sans-serif;
+    font-size: 20px;
+    margin-right: -45px;
+}
+
+.ven_iz_slike a{
+    color: rgb(161, 113, 238);
+}
+
+.ven_iz_slike:after {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(148, 126, 201);
+    background-repeat: no-repeat;
+    border-radius: 25px;
+    transition: all 0.2s ease-out;
+    transform: scale(0);
+}
+
+.ven_iz_slike:hover {
+    transform: scale(1.05);
+    background-color: rgb(154, 116, 195);
+    transition: all 0.3s ease;
+}
+
+.ven_iz_slike:hover:after {
+    transform: scale(1);
+}
+
+.ven_iz_slike:hover a {
+    color: rgb(255, 228, 200);
+    transition: all 0.3s ease;
+}
+
+.ven_iz_slike:hover{
+    border-color: rgb(255, 228, 200);
+    transition: all 0.3s ease;
+}
+
+.dela{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: rgb(55, 28, 81);
+    background-image: repeating-linear-gradient(-45deg, rgb(55, 28, 81),rgb(55, 28, 81) 20px, rgb(63, 36, 90) 20px,rgb(63, 36, 90) 35px);
+    background-size: 100px 100px; /*potrebno, da animacija dela*/
+    animation: linearGradient 90s linear infinite; /*avtomatsko je ease, treba rocno linear vpisati*/
+}
+
+@keyframes linearGradient{
+    0% {
+        background-position: 0%;
+    }
+    50% {
+        background-position: 100%;
+    }
+    100% {
+        background-position: 0%;
+    }
+}
+
+/*3d/2d del!!!*/
+
+/*Final splashart*/
+#k_splashart{
+    width: 100%;
+    height: 100%;
+    margin-top: -6px;
+}
+
+/*Footer section!*/
+.footer_container{
+    background-image: url("slikce/Illustration1.png");
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: -6px;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0) 70%, rgb(34, 12, 23) 100%), url("slikce/Illustration1.png");
+}
+
+.footer_povezave{
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: start;
+    color: rgb(140, 101, 195);
+}
+
+.footer_wrapper{
+    display: flex; /*prestavi v desno*/
+}
+
+.footer_stvari1, .footer_stvari2{
+    display: flex;
+    flex-direction: column;
+    margin: 16px;
+    text-align: left;
+    width: 160px;
+    align-items: flex-start;
+    box-sizing: border-box;
+}
+
+.footer_stvari2 a{
+    color:  rgb(182, 132, 182);
+}
+
+.footer_stvari2 a:hover{
+    color: rgb(255, 218, 218);
+    transition: all 0.3s ease;
+    font-size: 105%;
+}
+
+.footer_stvari1 a:hover{
+    color: rgb(255, 218, 218);
+    transition: all 0.3s ease;
+    font-size: 105%;
+}
+
+.footer_stvari1 a{
+    color:  rgb(182, 132, 182);
+}
+
+.footer_stvari2 h2{
+    margin-bottom: 16px;
+}
+
+.footer_stvari1 h2{
+    margin-bottom: 16px;
+}
+
+#information{
+    width: 30%;
+    height: 80%;
+}
+
+.footer_slike {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.locen_icon, .skupni_ikoni {
+    width: 10%;
+}
+
+.skupni_ikoni{
+    margin-right: 300px;
+    display: flex;
+}
+
+#insta{
+    width: 25%;
+    height: 80%;
+}
+
+#arstation{
+    width: 25%;
+    height: 80%;
+}
+
+#anim_containerr{
+    background-color:rgb(72, 37, 107);
+    width: 100%;
+    height: 90%;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+#anim_containerr1{
+    background-color:rgb(72, 37, 107);
+    width: 100%;
+    height: 100%;
+    padding-top:10px;
+    padding-bottom:20px;
+    margin-bottom:-10px;
+}
+
+#anim_containerr2{
+    background-color:rgb(55, 28, 81);
+    width: 100%;
+    height: 100%;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+.lotusi{
+    width: 100%;
+    height: 100%;
+}
+
+#dekoracija{
+opacity: 100%;
+display: block;
+position: absolute;
+top: 0;
+right: 0;
+padding-left: 50px;
+left: 1;
+width: 110%;
+height: 110%;
+object-fit: contain;
+}
+
+#dekoracija_zvezde1{
+    margin-left: 300px;
+    opacity: 100%;
+    display: block;
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    object-fit: contain; 
+}
+
+#dekoracija_zvezde2{
+    margin-top: -40px;
+    margin-left: 450px;
+    opacity: 100%;
+    display: block;
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    object-fit: contain; 
+}
+
+.glavno_container {
+    position: relative;
+    z-index: 1;
+  }
+
+#profile_anim {
+    position: absolute;
+    top: 900px;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /*ker c ne dam tega, prekrije gumb in ga ne mors kliknt*/
+  }
+
+  #chars1{
+    opacity: 100%;
+    display: block;
+    position: absolute;
+    width: 15%;
+    height: 15%;
+    object-fit: contain;
+    z-index: 3;
+    pointer-events: none;
+    }
+
+/*audio{
+    width: 80%;
+    background-color: rgb(0, 157, 255);
+    filter: hue-rotate(90deg);
+    border: 3px solid rgb(78, 199, 220);
+    border-radius: 40px;
+    background-image: linear-gradient(to top, rgb(0, 110, 255) 50%, rgb(255, 255, 255) 100%);
+} se zmer grd :(*/
+
+audio{
+    display: none;
+}
+
+.audio_btn{
+    border: none; /*znebi ugly-ass gumba*/
+    font-size: 20px;
+    margin-left: 30px;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.2s;
+    background: url('slikce/Sound-512.png') no-repeat center center;
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0; /*prepreči, d bi audio ikonca width/height vplivala na parent (.navigacija). Ikonca je se zmer v <nav> taggu ampak ne vpliva na sam tag!!*/
+}
+
+.audio_btn:active {
+    transform: scale(1.1);
+    transform: rotate(50deg);
+}
+
+.sparkle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    content: '';
+    box-shadow: 
+    0 -25px 0 0.3px pink, 
+    20px 0 0 0.2px purple, 
+    0 28px 0 0 blue, 
+    -21px 0 0 0 violet, 
+    12px -15px 0 1px lightblue, 
+    25px 21px 0 0 lightpink, 
+    -13px 12px 0 0.5px lightskyblue, 
+    -25px -22px 0 0 palevioletred, 
+    0 13px 0 0 plum, 
+    -15px 0 0 0.3px powderblue, 
+    18px 0 23px 0 paleturquoise,
+    21px 0 15px 0.3px rgb(28, 74, 166),
+    7px 0 8px 1px #ff97bc,
+    -9px 14px 0px 0.1px #ff97bc /*1. je desno, 2. je gor, 3. je dol, 4. je levo*/;
+    border-radius: 50%;
+    animation: sparkle 2s forwards;
+    will-change: box-shadow;
+    margin-left: 15px;
+    margin-top: 20px;
+}
+.sparkle:after{
+    width: 2px;
+    height: 2px;
+    transform: rotate(112deg);
+}
+
+@keyframes sparkle{
+    0%{
+        opacity: 100%;
+    }
+    0%, 10% {
+        transform: scale(0)
+    }
+    25% {
+        transform: scale(1.2) rotate(40deg);
+    }
+    50%{
+        transform: scale(1.2) rotate(40deg) skewX(-10deg);
+    }
+    100%{
+        opacity: 0%;
+    }
+
+}
