@@ -59,7 +59,7 @@ dot.classList.add('dot');
 dot.style.setProperty('--s', '8px');
 playing = false;
 
-    button.addEventListener("click", () => {
+    button.addEventListener("click", function() {
         if (!playing) { /*ko je playing false*/
             audio.play();
             playing = true;
@@ -74,3 +74,4 @@ playing = false;
         dot.classList.remove("dot"); /*odstranimo .sparkle v cssju*/
         void dot.offsetWidth; /*basically prisiliš browser, da pregleda state sparklea ; izognes batch spreminjanju*/
         dot.classList.add("dot"); /*pojavi .sparkle v cssju*/
+});
