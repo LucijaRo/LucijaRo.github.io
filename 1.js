@@ -16,10 +16,12 @@ const gumb = document.querySelector('.ven_iz_slike')
 const slike = document.querySelectorAll('.dela img') /*All zato, da dobimo array vseh naših slikc!!*/
 const stran = document.body; /*celotna stran, aka vse pod <body>*/
 let trenutnaSlikaIndeks = 0;
+let pozicijaStran = 0;
 
 /*klikneš na eno sliko*/
 slike.forEach((slika, indeks) => { /* => da mi ni treba pisat function(...)*/  /*vsaka slikca ma svoj indeks - 1. ma indeks 0*/ /*forEach loopa skozi vse slikce*/
     slika.addEventListener('click', function ()   {
+        pozicijaStran = window.scrollY; /*ne gre spet gor na stran, ko klikneš exit*/
         console.log(slike); /*debugging :(*/
         console.log(slika.src); /*debugging :(*/
         stran.classList.add('prikazi'); /*naredi nov class v CSSju*/
@@ -36,6 +38,7 @@ zapri.addEventListener('click', function() {
     stran.classList.remove('skrij_ostalo'); /*znebi novega classa v CSSju*/
     gumb.classList.toggle("kliknemo"); /* ko kliknemo na x*/
     tab.classList.remove('prikazi');
+    window.scrollTo({ top: pozicijaStran, behavior: 'auto' });
 });
 
 /*naslednja slika*/
