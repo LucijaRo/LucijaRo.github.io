@@ -812,7 +812,7 @@ a:link{
 }
 
 .ven_iz_slike a{
-    color: rgb(161, 113, 238) !important;
+    color: rgb(161, 113, 238);
 }
 
 .ven_iz_slike:after {
