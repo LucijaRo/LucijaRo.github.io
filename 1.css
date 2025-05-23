@@ -844,6 +844,7 @@ a:link{
 
 .ven_iz_slike:hover{
     border-color: rgb(255, 228, 200);
+    color: rgb(255, 228, 200) !important;
     transition: all 0.3s ease;
 }
 
