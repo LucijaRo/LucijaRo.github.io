@@ -811,7 +811,7 @@ a:link{
 }
 
 .ven_iz_slike a{
-    color: rgb(161, 113, 238);
+    color: rgb(161, 113, 238) !important;
 }
 
 .ven_iz_slike:after {
@@ -837,7 +837,7 @@ a:link{
 }
 
 .ven_iz_slike:hover a {
-    color: rgb(255, 228, 200);
+    color: rgb(255, 228, 200) !important;
     transition: all 0.3s ease;
 }
 
