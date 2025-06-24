@@ -1,5 +1,6 @@
 const meni = document.querySelector('#meni')
 const meniLink = document.querySelector('.navigacija__meni')
+const body = document.querySelector("body")
 
 meni.addEventListener('click', function() {
     meni.classList.toggle("is-active"); /* ko kliknemo na crtice*/
@@ -27,10 +28,13 @@ slike.forEach((slika, indeks) => { /* => da mi ni treba pisat function(...)*/  /
         stran.classList.add('prikazi'); /*naredi nov class v CSSju*/
         stran.classList.add('skrij_ostalo'); /*naredi nov class v CSSju*/
         tab.classList.add('prikazi');
+        document.body.classList.add("ni-overflow");
+        document.documentElement.classList.add("ni-overflow");
         izbrana.src = slika.src; /*izbere našo <img src="slikce/x.jpg", kjer je x indeks+1/*/
         trenutnaSlikaIndeks = indeks; /*sprav to kliknjeno slikco v indeks*/
     });
 });
+
 
 /*zapreš tab, ko klikneš na x*/
 zapri.addEventListener('click', function() {
@@ -38,6 +42,8 @@ zapri.addEventListener('click', function() {
     stran.classList.remove('skrij_ostalo'); /*znebi novega classa v CSSju*/
     gumb.classList.toggle("kliknemo"); /* ko kliknemo na x*/
     tab.classList.remove('prikazi');
+    document.body.classList.remove("ni-overflow");
+    document.documentElement.classList.remove("ni-overflow");
     window.scrollTo({ top: pozicijaStran, behavior: 'auto' });
 });
 
