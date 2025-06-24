@@ -1,4 +1,5 @@
 * {
+    overflow-x:hide;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -316,13 +317,6 @@
 #glavna_slika img {
     object-fit: cover; 
 }
-
-#lotusi{
-    width: 100%;
-    height: 280%;
-    margin-top: -170px;
-}
-
 
 .glavno{
     background-color:rgb(72, 37, 107);
