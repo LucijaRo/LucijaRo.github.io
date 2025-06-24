@@ -1,4 +1,5 @@
 * {
+    overflow-x: hidden;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -529,7 +530,7 @@
 
     .levi_gumb{
         position: fixed; 
-        top: 61% !important; 
+        top: 51% !important; 
         width: 40px !important; /*mora biti v px, ne %, ker č ne nista zares fixed*/
         height: 40px !important; /*mora biti v px, ne %, ker č ne nista zares fixed*/
         left: 4% !important;
@@ -537,7 +538,7 @@
 
     .desni_gumb{
         position: fixed; 
-        top: 61% !important; 
+        top: 51% !important; 
         width: 40px !important; /*mora biti v px, ne %, ker č ne nista zares fixed*/
         height: 40px !important; /*mora biti v px, ne %, ker č ne nista zares fixed*/
         right: 55% !important;
@@ -545,7 +546,7 @@
 
     .zapreti_tab{
         position: fixed; 
-        top: 60.2% !important; 
+        top: 50.2% !important; 
         width: 40px !important; /*mora biti v px, ne %, ker č ne nista zares fixed*/
         height: 40px !important; /*mora biti v px, ne %, ker č ne nista zares fixed*/
         left: 20% !important;
@@ -572,7 +573,7 @@
         }
         
     #insta{
-        width: 25%;
+        width: 40% !important;
         height: 75% !important;
         }
         
@@ -623,6 +624,7 @@
     }
 
     .locen-tab_dela{
+        overflow: hidden;
         padding-top: 50px;
         padding-bottom: 50px;
         background-color: rgb(55, 28, 81);
