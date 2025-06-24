@@ -475,6 +475,9 @@
 
 /*mobi*/
 @media screen and (max-width: 768px) {
+    #lotusi{
+        display: none;
+    }
     .glavno_container{
         display: grid;
         grid-template-columns: auto;
