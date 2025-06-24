@@ -475,6 +475,9 @@
 
 /*mobi*/
 @media screen and (max-width: 768px) {
+    #oblacki {
+        opacity: 0%;
+    }
     #lotusi{
         display: none;
     }
