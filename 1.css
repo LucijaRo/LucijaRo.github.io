@@ -317,13 +317,6 @@
     object-fit: cover; 
 }
 
-#lotusi{
-    width: 100%;
-    height: 280%;
-    margin-top: -170px;
-}
-
-
 .glavno{
     background-color:rgb(72, 37, 107);
     display: flex;
@@ -474,6 +467,12 @@
 
 /*mobi*/
 @media screen and (max-width: 768px) {
+    #oblacki {
+        opacity: 0%;
+    }
+    #lotusi{
+        display: none;
+    }
     .glavno_container{
         display: grid;
         grid-template-columns: auto;
@@ -514,8 +513,8 @@
     }
 
     .dela img{
-        width:100%;
-        height:100%;
+        width:100% !important;
+        height:100% !important;
         border-radius: 10px !important;
     }
 
@@ -529,7 +528,7 @@
 
     .levi_gumb{
         position: fixed; 
-        top: 61% !important; 
+        top: 51% !important; 
         width: 40px !important; /*mora biti v px, ne %, ker č ne nista zares fixed*/
         height: 40px !important; /*mora biti v px, ne %, ker č ne nista zares fixed*/
         left: 4% !important;
@@ -537,7 +536,7 @@
 
     .desni_gumb{
         position: fixed; 
-        top: 61% !important; 
+        top: 51% !important; 
         width: 40px !important; /*mora biti v px, ne %, ker č ne nista zares fixed*/
         height: 40px !important; /*mora biti v px, ne %, ker č ne nista zares fixed*/
         right: 55% !important;
@@ -545,7 +544,7 @@
 
     .zapreti_tab{
         position: fixed; 
-        top: 60.2% !important; 
+        top: 50.2% !important; 
         width: 40px !important; /*mora biti v px, ne %, ker č ne nista zares fixed*/
         height: 40px !important; /*mora biti v px, ne %, ker č ne nista zares fixed*/
         left: 20% !important;
@@ -572,7 +571,7 @@
         }
         
     #insta{
-        width: 25%;
+        width: 40% !important;
         height: 75% !important;
         }
         
@@ -602,7 +601,7 @@
         top: 670px !important;
         left: 0;
         z-index: 10000000;
-        width: 100%;
+        width: 20%!important;
         height: 20% !important;
         }
 
@@ -623,6 +622,7 @@
     }
 
     .locen-tab_dela{
+        overflow: hidden;
         padding-top: 50px;
         padding-bottom: 50px;
         background-color: rgb(55, 28, 81);
@@ -808,11 +808,11 @@ a:link{
     font-family: 'Lilita One', sans-serif;
     font-size: 20px;
     margin-right: -45px;
-    color: rgb(161, 113, 238) !important;
+    color: rgb(161, 113, 238);
 }
 
 .ven_iz_slike a{
-    color: rgb(161, 113, 238) !important;
+    color: rgb(161, 113, 238);
 }
 
 .ven_iz_slike:after {
@@ -844,6 +844,7 @@ a:link{
 
 .ven_iz_slike:hover{
     border-color: rgb(255, 228, 200);
+    color: rgb(255, 228, 200) !important; /*button a je invalid*/
     transition: all 0.3s ease;
 }
 
